@@ -1,0 +1,27 @@
+@use "reset";
+@font-face{
+    font-family: "killers-text";
+    src: url("/font/satan.ttf");
+
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: auto;
+    justify-content: center;
+    color: white;
+    background-color: black;
+    row-gap: 20px;
+    column-gap: 50px;
+    padding-bottom: 5rem;
+    
+  }
+
+.item1{
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-family: "killers-text";
+    font-size: 25px;
+}
