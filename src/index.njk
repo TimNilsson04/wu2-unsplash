@@ -1,21 +1,54 @@
 ---
-layout: base.njk
+layout: base1.njk
 ---
 
-<main >
-    <div class="item1">
-    <h1>Data dump</h1>
-    <p >Min github user: {{ github.login }} och plats: {{ github.location }}.</p>
-</div>
-    <div class="grid-container">
-    {% asyncAll  item in unsplash.results %}
-        <!-- <pre>{{ item | dump(2) }}</pre> -->
-       
-        <img src="{{ item.urls.small }}" alt="{{ item.description }}"> 
-      
-   
-    {% endall %}
+<main>
 
+    <h1>Country
+        {{
+        country[0].name.common
+        }}
+    </h1>
+
+    <div class="grid-container">
+
+        {% image country[0].flags.png, "jp" %}
+        <div class="image1">
+            {% image country[0].coatOfArms.png, "CoatOfArms", "10vw, 10vw" %}
+        </div>
+
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13627579.110253144!2d137.15386460000002!3d33.5001886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34674e0fd77f192f%3A0xf54275d47c665244!2sJapan!5e0!3m2!1ssv!2sse!4v1666945947475!5m2!1ssv!2sse"
+            width="300" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            <p> Official JP Name:
+                {{
+                country[0].name.nativeName.jpn.official
+                }}
+            </p>
+
+            <p> 
+                Coat Of Arms
+            </p>
+
+
+        <a href="{{ country[0].maps.googleMaps }}">Google Maps</a>
+
+
+       
+        <p>
+
+        </p>
+
+        <!-- <pre>{{ item | dump(2) }}</pre> -->
+
+<!--        <pre>
+            {{ country | dump(2) }}
+        </pre>
+-->
+
+    </div>
     <!-- {% image "https://images.unsplash.com/photo-1508361001413-7a9dca21d08a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNzQ3Nzh8MHwxfHNlYXJjaHwxfHxoYWxsb3dlZW58ZW58MHx8fHwxNjY2NTk0Mjc4&ixlib=rb-4.0.3&q=80&w=400", "photo of my cat" %} -->
-</div>
+
 </main>

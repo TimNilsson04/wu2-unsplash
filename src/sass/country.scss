@@ -1,0 +1,36 @@
+@use "reset";
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto ;
+    padding: auto;
+    justify-content: center;
+    color: white;
+    background-color: black;
+ //   row-gap: 20px;
+  //  column-gap: 50px;
+    padding-bottom: 5rem;
+    
+  }
+h1{
+    color: white;
+    background-color: black;
+    text-align: center;
+}
+.image1 > picture{
+    max-width: 40%;
+    margin: auto;
+}
+
+main{
+    background-color: black;
+    padding-bottom: 25rem;
+}
+p{
+    text-align: center;
+}
+a{
+    text-align: center;
+    color: red;
+}
+
