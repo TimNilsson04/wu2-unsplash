@@ -33,4 +33,19 @@ a{
     text-align: center;
     color: red;
 }
-
+@media(max-width: 768px)
+    {
+        .grid-container{
+            grid-template-columns: auto;
+        }
+        .image1 > picture{
+            max-width: 60%;
+            margin: auto;
+        }
+        .img2{
+            margin: auto;
+        }
+        .frame{
+            margin: auto;
+        }
+    }
