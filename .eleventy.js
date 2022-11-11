@@ -19,6 +19,27 @@ async function imageShortcode(src, alt, sizes) {
 }
 
 module.exports = function (eleventyConfig) {
+    eleventyConfig.addPlugin(lazyImages, {})
+    function lazyImages (eleventyConfig, userOptions = {}) {
+    const {parse} = require('node-html-parser')
+  
+    const options = {
+      name: 'lazy-images',
+      ...userOptions
+    }
+  
+    eleventyConfig.addTransform(options.extensions, (content, outputPath) => {
+      if (outputPath.endsWith('.html')) {
+        const root = parse(content);
+        const images = root.querySelectorAll('img');
+        images.forEach((img) => {
+          img.setAttribute('loading', 'lazy')
+        })
+        return root.toString()
+      }
+      return content;
+    })
+  }
     eleventyConfig.addPassthroughCopy("src/css");
     eleventyConfig.addPassthroughCopy("src/font");//
     eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);

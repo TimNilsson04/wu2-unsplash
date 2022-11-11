@@ -4,6 +4,9 @@
     src: url("/font/satan.ttf");
 
 }
+body{
+    background-color: #121212;
+}
 
 .grid-container {
     display: grid;
@@ -11,7 +14,7 @@
     padding: auto;
     justify-content: center;
     color: white;
-    background-color: black;
+    
     row-gap: 20px;
     column-gap: 50px;
     padding-bottom: 5rem;
@@ -19,9 +22,24 @@
   }
 
 .item1{
-    background-color: black;
+    
     color: white;
     text-align: center;
     font-family: "killers-text";
     font-size: 25px;
 }
+a{
+    color: white;
+}
+nav{
+    
+    text-align: center;
+}
+@media(max-width: 768px)
+    {
+        .grid-container{
+            grid-template-columns: auto;
+            gap: 25px;
+        }
+        
+    }
